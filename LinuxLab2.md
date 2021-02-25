@@ -2,7 +2,7 @@
 #Lab 2: Installing Ubuntu 20.04 in VirtualBox
 
 ##Question 2:
-![Question2](lab2Question2.PNG)
+![Question2](lab2Question2.png)
 
 ##Question3:
 ![Question 3](lab2Question3.PNG)
