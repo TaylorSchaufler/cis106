@@ -1,0 +1,112 @@
+#MANAGING DATA
+
+Note: If there are any issues with my note taking, it's probably partially cause I'm using Vim and not entirely used to it yet. And just a bad notetaker in general. Then again, my Vim notes have been pretty helpful so far, even though I missed the directional movement instructions. 
+
+
+Backup: Copies files and directories to an archive
+system backup: Use to restore data in case of a system failure or data loss and corruption
+Archive: File containing many other files, each of which is still identified by its filename, owner, permissions, and timestamp
+Important directories to include in system backups:
+- /etc contains core config files, security files, network config files, user and group info, etc
+- /home each user has a /home directory
+- /opt software and packages added after the default installation
+- /root root user's home directory
+- /var system-specific information that changes while the system is running normally
+
+
+##Archiving utilities
+- Tar (tape archive): creates archives by combining files and directories into a single file
+- CPIO: Creates an archive, restores files from an archive, or copies a directory hierarchy. The cpio utility has 3 modes of operation:
+	1. Create (copy-out) mode places multiple files into a single archive
+	2. Extract (copy-in) mode restores files from an archive
+	3. Pass-through (copy-pass) mode copies a directory hierarchy
+
+##The tar program:
+Usage:
+- To create an archive:
+	Tar + options + archive name + files to add to archive
+- To extract an archive:
+	tar + options + file to extract
+
+-c or --create; Creates an archive file
+-t or --list; Lists an archive's contents
+-x or --extract; Extracts an archive's contents
+-f or --file; Specifies the archive file's name and location (ALWAYS REQUIRED)
+-v or --verbose; Displays details about copying files to and extracting files from archives
+-z or --gzip, --ungzip; Filters an archive through gzip
+
+'tar -cf files.tar file1 file2' - creates an archive called files.tar, and archives file1 and file2 within it.
+
+'tar -cf myfiles.tar ~/Downloads/* ~/Pictures/*' - archives everything in Downloads and everything in Pictures directories. To archive the folders themselves, simply remove the asterisks. To only archive pdf files in that, instead write '~/Downloads/*.pdf'. For multiple specific extensions, '~/Downloads/*.{jpeg, png, gif}' or whatever extensions you're looking for.
+
+A file in an archive is called a 'member'.
+
+Desperately had to take a bathroom break, so hopefully I didn't miss much. Apparently we're talking about curl? Sorry if that's a problem, but I'd rather my room didn't smell like an amazon warehouse.
+
+J option that wasn't mentioned before: decompresses.
+
+-r adds files to an existing archive
+
+##The CPIO program
+CPIO requires a list of files to archive. The option to create an archive is -o
+- ls | cpio -ov > archive.cpio
+To extract an a archive to cpio use the -i option with <
+- cpio -iv < archive.cpio
+Archive specific files
+- find . -iname *.sh | cpio -ov > scriptsArchive.cpio
+Create a tar archive with cpio
+- cpio -idv -F sample.tar
+View the content of *tar Archive File
+- cpio -it -F sampl-r adds files to an existing archive
+
+##The CPIO program
+CPIO requires a list of files to archive. The option to create an archive is -o
+- ls | cpio -ov > archive.cpio
+To extract an a archive to cpio use the -i option with <
+- cpio -iv < archive.cpio
+Archive specific files
+- find . -iname *.sh | cpio -ov > scriptsArchive.cpio
+	- the . can be ANY PATH (I think, losing track of what's going on cause I'm spending more focus on typing so I have good notes)
+Create a tar archive with cpio
+- cpio -idv -F sample.tar
+View the content of *tar Archive File
+- cpio -it -F sample.tar
+Extract *.tar Archive File using cpio
+- cpio -idv -F sample.tar
+View the content of *.tar Archive File
+- cpio -it -F sample.tar
+
+##The ar utility
+The GNU ar program creates, modifies, and extracts form archives.
+It's similar to tar, and I don't think this slide will be up for long.
+Yep, it wasn't.
+
+##File compression
+VERY important to keep costs down on storage
+The first 3 seasons of silicon valley were apparently about it. Might wanna make a point of watching that show when I'm not desperately backed up on work.
+
+Some patent troll copyrighted the word "compress". I really hate copyright law...
+
+- Compress was originally the name of a utility for file compression.
+- Gzip (GNU Zip) has better compression ratios than compress does and can uncompress files that were compressed using the compress command FUCK
+Slide changed
+
+- Gzip, bzip2, and xz compress files in place meaning the original file is deleted after compression.
+= bzip2 offers better compression ratios in compariosn to gzip
+- xz produces better compression ratios than both
+- 7zip is apparently the best, though xz is similar.
+
+DO NOT confuse gzip with zip. Zip is used to pack and unpack zip archives containing several files compressed into a single file that has been imported from or is being exported to a Windows system.
+
+gunzip == gzip -d
+bunzip == bzip2 -d
+unxz == xz-d
+
+terminal's blocking the rest, including what that means.
+
+- Zip is an archiving and compression utility. As is 7zip and rar.
+- rar is proprietary, so we can't make them in linux. We can extract them though.
+- To use zip: zip + archiveName.zip + files to include in archive.
+- To use the fucka;lsdfkvj'awle I needed that. I was gonna write down what the 7zip package was on linux so I could install it. Guess I'll have to go to github for that.
+
+

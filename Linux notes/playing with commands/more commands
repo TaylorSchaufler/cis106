@@ -1,0 +1,37 @@
+the cat command is used to display the content of a file
+cat -n lets you number the lines
+cat -b numbers lines, without counting lines that are empty other than newlines in that numbering
+cat -s suppresses empty lines
+
+tac is the opposite of cat, in that it lists lines in reverse order, from bottom to top instead of top to bottom
+
+more is a pager program. Unlike cat, allows one to move their (in-terminal) cursor up and down. Not an editor, just a viewer. Can navigate using the arrow keys. Using the space bar brings you to the bottom and quits.
+more -10 shows them 10 entries at a time
+less is another pager program that displays the content of a file one page at a time. It's generally preferable, due to being faster, as more loads all pages at once, taking up more RAM.
+
+The head command displays the top N numbers of lines of a given file. 
+example: head -15 todo.md lists the first 15 lines
+
+cut [option] [file] cuts out characterse from a list while displaying I think, had to step out a moment
+robertalberto.com/linuxcommands/commands/cut.html is useful for looking up commands
+
+cut -d ':' -f1 /etc/passwd lists all the users on your system
+Jesus christ, these are going by fast
+cut -d ':' -f1,7 --output-delimiter=' = ' /etc/passwd does something involving a delimeter
+
+The paste command does... a thing, fuck.asdkfljasssssssssscm mn
+It basically concatonates 2 files, kinda.
+paste -d = ip.txt users.txt
+outputted for me in the home directory
+192.168.1.100=jdoe
+192.168.1.101=mmary
+192.168.1.102=katyx
+=
+
+sort -o sorteduser users.txt
+asdofiklnadeswlnaeswf/;
+
+wc -l /etc/passwd tells you the amount of entries in that file/directory
+wc -l /etc/passwd | cut -b 1,2 sends the output of the first wc command to the second cut command, removing the characters "/etc/passwd/" from the output.
+
+If my notes seem sparse, I apologize, but I usually don't take notes for a reason. It's an unnecessary amount of extra stress that I can usually just look up later if I have questions, and it makes it harder for me to focus in class on what they're actually doing.

@@ -1,0 +1,51 @@
+mkdir = make directory (folder, basically)
+mkdir animals = makes a folder called "animals"
+mkdir animals food water = makes 3 folders named animals, food, and water
+mkdir "animal crossing" = makes a folder called "animal crossing" 
+
+escaping a character: Makes it so that a computer doesn't treat something as a value, but rather as a string.
+mkdir animal\ crossing = also makes a folder called "animal crossing", by escaping a single character (specifically, the space character)
+\n creates a newline, just like in c strings and python
+mkdir can also be used by typing out full directories, like "mkdir /home/zeyo/Documents/games"
+
+touch fileName makes a file
+rm fileName removes a file
+rm can delete empty directories, but not ones that have stuff in them
+rm -r fps/ would remove the fps/ directory even if it has stuff in it, by recursively deleting the contents of the directory, and then the directory itself.
+
+"mv source/ destination/" lets you move directories
+
+cp source/ destination/ lets you copy directories
+In order to copy a folder, you have to instead do "cp -r source/ destination/"
+
+shortcuts in windows are equivalent to links in linux
+
+Inode: A data structure that contains all the information about a file except the file name and its content
+
+"stat filename" lets you find the inode, amount of links, and other info
+
+Hard links: Files that point to data on the hard drive; uses the same inode, and does not create a copy of the data
+
+"ln file hardlink" lets you create a hard link for one of those files, but I forget which one is the hard link
+
+Soft links: Can be used among different file systems without problems. Known as shortcuts in windows. Symbolic links or soft links are a special type of file that point to other files instead of data in the hard drive. Does not share the same inode number. Not supported by FAT32
+
+"ln -s file softlink" lets you create a symbolic link.
+
+To check the manual of a command, use man + command
+example: man ls
+
+man -k 'searchterm' lets you search for manuals for whatever you look up
+
+touch file{1..5}.txt creates file1.txt, file2.txt, file3.txt, etc
+
+Wildcards:
+The main wildcard is *
+
+For example, ls *.txt would list all  files that end in .txt
+ls f*g lists all files starting with f and ending in g
+ls f* lists all files starting with f
+ls *g lists all files starting with g
+
+ls file?.txt will list all files with that name, replacing the question mark with whatever character would be there
+So for our previous example with creating multiple files at once, it would list file1.txt, file2.txt, etc through file5.txt
