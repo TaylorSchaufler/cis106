@@ -110,3 +110,85 @@ terminal's blocking the rest, including what that means.
 - To use the fucka;lsdfkvj'awle I needed that. I was gonna write down what the 7zip package was on linux so I could install it. Guess I'll have to go to github for that.
 
 
+File compression 7zip stuff I missed cause of technical difficulties (computer froze not long after I entered the call)
+
+#Linux File Permissions
+
+###File Ownership
+- A file can be owned only by one user and one group
+- ls -l shows you the file user owner and group owner
+- The /etc/passwd file contains a list of all the users in Linux
+- The /etc/group file contains a list of all the groups in Linux
+- The chown command is used for changing group owner.
+Syntax: chown user:group file
+Example:
+chown john file.txt
+chown :marketinGroup file.txt
+chown john:marketingroup file.txt
+
+I wish I comprehended what I just typed, but I just mindlessly typed ;-;
+
+###Files vs Directories
+
+R (read) gives permission to open a file
+W (write) gives permission to open a file and edit
+X (execute) allows user to run the file (as long as it's a program or a script)
+It's different with directories, but NO TIME
+
+rw-r--r-- 1 martin users 0 2012-04-11 09:20 file1
+The hyphen represents a permission that hasn't been granted
+In this example, it means the user doesn't have execute permission
+The group category is set to r--, meaning the group only has read permission
+Similarly, the other category is set to r--, meaning every user on the system (other than file owner and group) has read permission but not write or execute
+
+###The chmod command
+
+The chmod (change mode) command is used to change permissions on files and directories and has the syntax: chmod permissions file/directory
+
+##Symbolic notation
+
+u (user)
+g (group)
+o (other)
+a (all)
+
+chmod u+x script.sh
+chmod o-x script.sh
+chmod 
+
+
+### Example of all of this
+
+zeyo@pop-os:~/Downloads$ touch file1
+zeyo@pop-os:~/Downloads$ ls -l
+total 98808
+-rwxrwxrwx 1 zeyo zeyo      922 Jan 24 22:27 ChaosBolt.py
+-rw-rw-r-- 1 zeyo zeyo        0 Apr 21 18:04 file1
+-rw-rw-r-- 1 zeyo zeyo 95117944 Apr 18 01:45 Gender-and-Age-Detection-master.zip
+-rw-rw-r-- 1 zeyo zeyo  6052517 Apr 16 00:22 redditsave.com_neko_janai_desu-vq7rsj0fvvs61.mp4
+zeyo@pop-os:~/Downloads$ chmod u+x file1
+zeyo@pop-os:~/Downloads$ ls -l
+total 98808
+-rwxrwxrwx 1 zeyo zeyo      922 Jan 24 22:27 ChaosBolt.py
+-rwxrw-r-- 1 zeyo zeyo        0 Apr 21 18:04 file1
+-rw-rw-r-- 1 zeyo zeyo 95117944 Apr 18 01:45 Gender-and-Age-Detection-master.zip
+-rw-rw-r-- 1 zeyo zeyo  6052517 Apr 16 00:22 redditsave.com_neko_janai_desu-vq7rsj0fvvs61.mp4
+zeyo@pop-os:~/Downloads$ chmod g-w file1
+zeyo@pop-os:~/Downloads$ ls -l
+total 98808
+-rwxrwxrwx 1 zeyo zeyo      922 Jan 24 22:27 ChaosBolt.py
+-rwxr--r-- 1 zeyo zeyo        0 Apr 21 18:04 file1
+-rw-rw-r-- 1 zeyo zeyo 95117944 Apr 18 01:45 Gender-and-Age-Detection-master.zip
+-rw-rw-r-- 1 zeyo zeyo  6052517 Apr 16 00:22 redditsave.com_neko_janai_desu-vq7rsj0fvvs61.mp4
+
+chmod u=---, g-w, o-r
+would leave a freshly made empty file with no user permissions, only write group permissions, and only read other permissions. This is assuming that beforehand, it starts with all 3 having read and write permissions, but not execute.
+
+numeric notation:
+0 = ---
+1 = --x
+This sucks to write them all out, but the syntax would be 'chmod 042 filename'
+					 			(ugo)
+
+
+
