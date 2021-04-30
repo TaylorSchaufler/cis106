@@ -1,0 +1,10 @@
+From the console, to commit changes to my repository, I should do the following commands:
+
+git pull
+git add .
+git commit -m "Task: description of whatever I did here"
+git push
+
+I'm not entirely sure what these commands necessarily do individually yet, but they should allow me to update my repository for this class, allowing me to submit my assignments
+Writing this here mostly as a reminder, though also for future reference in future projects. I don't remember what to do to link the project properly, but when I do,
+I hope I have the insight to update this file to reflect that step.
