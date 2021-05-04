@@ -1,11 +1,11 @@
-#Final Project: Deliverable 1
+# Final Project: Deliverable 1
 
 Taylor Carly Schaufler
 cis 106
 Professor Alberto
 04/19/21
 
-##Questions to Answer
+## Questions to Answer
 
 1. Which project will I be completing?
 
