@@ -43,3 +43,9 @@ Type: Linux
 ## Question 5:
 
 Gamer-os kinda reminds me of Steam-OS. Actually, it might even be a spiritual successor, considering steam-os isn't updated anymore. It's essentially a linux distribution for playing games (mostly Steam games) like it's a regular game console. Kinda pointless in my opinion, cause everything you can do with this, you can do just by opening Big Picture Mode in Steam. But I guess if you REALLY wanna play PC games without feeling like you're playing on a PC, this is the way to go. At least it claims to allow you to play non-steam games too, so that makes it an upgrade from Steam-OS.
+
+## Question 6: 
+
+![Its booted!](gentoo1.png)
+![uname](gentoo2.png)
+![System stopped](System%20stopped.png)
