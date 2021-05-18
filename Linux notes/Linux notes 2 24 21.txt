@@ -1,0 +1,24 @@
+Linux can run multiple processes at the same time, rather than doing instructions 1 by 1
+
+Professor recommends Nemo file manager
+
+FUCK ADHD, WORK ADDERALL DAMN YOU
+
+Linux uses tree like structure, root being the "source", and everything else being branching paths from there
+
+Root is represented by / I think
+
+pwd displays current directory
+cd changes directory 
+	to change to a folder in the directory you're in, you can just do "cd foldername".
+	to change to a specific folder, you can also just type out the specific directory
+	cd ../ lets you go back a directory, cd ../../ lets you move back 2, etc
+	clear clears the screen, as a reminder
+	using no argument in cd automatically takes you to your home directory (not /home, but /home/username)
+	cd ~ also does that, I think?
+	cd $HOME also does it
+	cd - takes you to your previous working directory
+	man ls displays how it works, verious commands I think, etc
+	ls -lh shows file sizes in directory
+
+lsls lists the files in the current directory
